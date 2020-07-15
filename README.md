@@ -22,3 +22,17 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## TODO
+
+### Add Graph
+
+### make search-bar work
+
+### make list of stocks for search-bar?
+
+### add animations
+
+### add more error displays
+
+### add error-checking to fetch
