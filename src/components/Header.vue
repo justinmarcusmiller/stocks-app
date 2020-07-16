@@ -35,7 +35,11 @@ export default {
           } else {
             this.$emit("updatejsondata", json);
           }
-        });
+        })
+        .catch((err) =>
+          console.log(err),
+          //this.$emit("updatejsondata", "error")
+        )
     },
   },
 };
@@ -83,7 +87,7 @@ export default {
 }
 
 #SearchBar__Button:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
 </style>
