@@ -22,13 +22,19 @@ export default {
       
       fetch(
         "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+        //"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IB&apikey=PTXOVNYY2ZY803KN"
       )
         .then(function(u) {
           return u.json();
         })
         .then((json) => {
           console.log(json);
-          this.$emit("updatejsondata", json);
+          if (json["Error Message"]) {
+            console.log(json["Error Message"])
+            this.$emit("updatejsondata", "error");
+          } else {
+            this.$emit("updatejsondata", json);
+          }
         });
     },
   },
