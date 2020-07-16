@@ -90,4 +90,37 @@ export default {
   background-color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
+
+@media only screen and (max-width: 900px) {
+  #header {
+    height: 150px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #header__Title {
+    margin-left: 15px;
+  }
+
+  #header__Title h1 {
+    font-size: 48px;
+  }
+
+  #header__SearchBar {
+    margin-right: 15px;
+    text-align: center;
+  }
+} 
+
+@media only screen and (max-width: 400px) {
+  #header__SearchBar {
+    margin: 0;
+    width: 100%;
+  }
+
+  #SearchBar__Box {
+    width: 200px;
+  }
+}
 </style>

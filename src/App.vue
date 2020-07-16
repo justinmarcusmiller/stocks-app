@@ -3,7 +3,7 @@
     <Header @updatejsondata="updatejsondata($event)" />
     
     <p class="noDataError" v-if="apiData === null">
-      Search for a stock using the search-bar
+      Search for a stock by using the search-bar
     </p>
     <p class="noDataError" v-else-if="apiData === 'Error'">API Error, Please Enter A Different Search Term, Or Try Again Later.</p>
     <DataView

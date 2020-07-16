@@ -87,4 +87,29 @@ export default {
   margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 900px) {
+  #dataView {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #dataView__Header {
+    height: 100px;
+  }
+
+  #date {
+    margin-bottom: 25px;
+  }
+
+  .dataDisplay {
+    max-width: 75vw;
+  }
+
+  #dataView__Data {
+    font-size: 24px;
+  }
+}
+
 </style>
