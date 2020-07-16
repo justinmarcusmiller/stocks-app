@@ -1,10 +1,10 @@
 <template>
   <header id="header">
     <div id="header__Title">
-      <h1 @click="search">{{ symbol }}</h1>
+      <h1>Stocks</h1>
     </div>
-    <form id="header__SearchBar">
-      <input id="SearchBar__Box" type="text" />
+    <form id="header__SearchBar" @submit.prevent="search()">
+      <input v-model="term" id="SearchBar__Box" type="text" />
       <button id="SearchBar__Button">Search</button>
     </form>
   </header>
@@ -14,21 +14,21 @@
 export default {
   data() {
     return {
-      symbol: "Test",
+      term: null
     };
   },
   methods: {
     search: function() {
-      
+      //console.log(this.term)
       fetch(
-        "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
-        //"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IB&apikey=PTXOVNYY2ZY803KN"
+        //"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+        "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + (this.term.toUpperCase()) + "&apikey=PTXOVNYY2ZY803KN"
       )
         .then(function(u) {
           return u.json();
         })
         .then((json) => {
-          console.log(json);
+          //console.log(json);
           if (json["Error Message"]) {
             console.log(json["Error Message"])
             this.$emit("updatejsondata", "error");

@@ -48,7 +48,7 @@ export default {
         const date1 = new Date(e["Meta Data"]["3. Last Refreshed"]);
         this.apiData = e;
         this.symbol = e["Meta Data"]["2. Symbol"];
-        console.log(date1);
+        //console.log(date1);
         this.date =
           date1.getUTCMonth() +
           1 +
