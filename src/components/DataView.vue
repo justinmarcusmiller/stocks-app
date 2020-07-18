@@ -28,7 +28,8 @@
     </div>
     <div id="graph">
       <la-cartesian
-        :bound="[(n) => n - 10, (n) => n + 10]"
+        :autoresize="true"
+        :bound="[(n) => n - 2, (n) => n + 2]"
         :data="[
           { name: date5, pv: date5close },
           { name: date4, pv: date4close },
@@ -89,7 +90,7 @@ export default {
 #dataView {
   color: #707070;
   display: grid;
-  grid-template-columns: 620px 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 171px 1fr;
   justify-items: center;
 }
@@ -135,7 +136,6 @@ export default {
 
 @media only screen and (max-width: 900px) {
   #dataView {
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;

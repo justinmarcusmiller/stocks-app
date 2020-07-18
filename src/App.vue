@@ -97,18 +97,18 @@ export default {
         this.date3 = this.convertDate(date3, 2);
         this.date4 = this.convertDate(date4, 2);
         this.date5 = this.convertDate(date5, 2);
-        console.log(this.apiData);
+        //console.log(this.apiData);
         //console.log(this.apiData["Time Series (Daily)"][this.date2.toString()]["4. close"])
         this.date1_close = Number(this.apiData["Time Series (Daily)"][this.date1.toString()]["4. close"]).toFixed(2)
         this.date2_close = Number(this.apiData["Time Series (Daily)"][this.date2.toString()]["4. close"]).toFixed(2)
         this.date3_close = Number(this.apiData["Time Series (Daily)"][this.date3.toString()]["4. close"]).toFixed(2)
         this.date4_close = Number(this.apiData["Time Series (Daily)"][this.date4.toString()]["4. close"]).toFixed(2)  
         this.date5_close = Number(this.apiData["Time Series (Daily)"][this.date5.toString()]["4. close"]).toFixed(2)
-        console.log(this.date5.toString())
+        //console.log(this.date5.toString())
         // date6 and date7 close are not working
-        console.log(this.date3_close)
-        console.log(this.date4_close)
-        console.log(this.date5_close)
+        //console.log(this.date3_close)
+        //console.log(this.date4_close)
+        //console.log(this.date5_close)
 
         //console.log(this.apiData["Time Series (Daily)"]["2020-02-26"]["1. open"])
         
