@@ -30,6 +30,7 @@
       <la-cartesian
         :autoresize="true"
         :bound="[(n) => n - 2, (n) => n + 2]"
+        textColor="#707070"
         :data="[
           { name: date5, pv: date5close },
           { name: date4, pv: date4close },
@@ -39,8 +40,8 @@
         ]"
       >
         <la-line dot curve prop="pv"></la-line>
-        <la-x-axis prop="name"></la-x-axis>
-        <la-y-axis></la-y-axis>
+        <la-x-axis prop="name" gridline></la-x-axis>
+        <la-y-axis gridline></la-y-axis>
         <la-tooltip></la-tooltip>
       </la-cartesian>
     </div>
@@ -129,9 +130,8 @@ export default {
 #graph {
   display: flex;
   align-items: center;
-  background-color:#e6e6e6;
   padding: 25px;
-  border: 1px solid black
+  border: 1px solid #707070
 }
 
 @media only screen and (max-width: 900px) {
