@@ -94,6 +94,9 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 171px 1fr;
   justify-items: center;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 25px;
 }
 
 #dataView__Header {
@@ -134,11 +137,12 @@ export default {
   border: 1px solid #707070
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
   #dataView {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 25px 0;
   }
 
   #dataView__Header {
@@ -156,5 +160,13 @@ export default {
   #dataView__Data {
     font-size: 24px;
   }
+
+  #graph {
+    
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
 }
 </style>
