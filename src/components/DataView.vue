@@ -26,25 +26,63 @@
         <p class="data__num">{{ volume }}</p>
       </div>
     </div>
-    <!-- <Graph /> -->
-    
+    <div id="graph">
+      <la-cartesian
+        :bound="[(n) => n - 10, (n) => n + 10]"
+        :data="[
+          { name: date5, pv: date5close },
+          { name: date4, pv: date4close },
+          { name: date3, pv: date3close },
+          { name: date2, pv: date2close },
+          { name: date1, pv: date1close },
+        ]"
+      >
+        <la-line dot curve prop="pv"></la-line>
+        <la-x-axis prop="name"></la-x-axis>
+        <la-y-axis></la-y-axis>
+        <la-tooltip></la-tooltip>
+      </la-cartesian>
+    </div>
   </div>
 </template>
 
 <script>
-//import Graph from "@/components/Graph.vue";
-
+import { Laue } from "laue";
+import { Cartesian, Line, XAxis, YAxis, Tooltip } from "laue";
 
 export default {
-  props: ["symbol", "date", "open", "close", "high", "low", "volume"],
+  props: [
+    "symbol",
+    "date",
+    "open",
+    "close",
+    "high",
+    "low",
+    "volume",
+    "date1",
+    "date2",
+    "date3",
+    "date4",
+    "date5",
+    "date1close",
+    "date2close",
+    "date3close",
+    "date4close",
+    "date5close",
+  ],
+  components: {
+    LaCartesian: Cartesian,
+    LaLine: Line,
+    laTooltip: Tooltip,
+    laXAxis: XAxis,
+    laYAxis: YAxis,
+  },
   data() {
     return {
+      show: "line",
     };
   },
-  components: {
-    //Graph
-  },
-}
+};
 </script>
 
 <style>
@@ -87,6 +125,14 @@ export default {
   margin-bottom: 30px;
 }
 
+#graph {
+  display: flex;
+  align-items: center;
+  background-color:cornsilk;
+  padding: 25px;
+  border: 1px solid black
+}
+
 @media only screen and (max-width: 900px) {
   #dataView {
     width: 100vw;
@@ -111,5 +157,4 @@ export default {
     font-size: 24px;
   }
 }
-
 </style>
