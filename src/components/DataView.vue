@@ -129,7 +129,7 @@ export default {
 #graph {
   display: flex;
   align-items: center;
-  background-color:cornsilk;
+  background-color:#e6e6e6;
   padding: 25px;
   border: 1px solid black
 }
