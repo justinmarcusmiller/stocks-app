@@ -25,14 +25,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## TODO
 
-### Add Graph
-
-### make search-bar work
-
-### make list of stocks for search-bar?
-
 ### add animations
 
-### add more error displays
+### add responsive css
 
 ### add error-checking to fetch
