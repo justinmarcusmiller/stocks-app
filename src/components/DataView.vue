@@ -29,14 +29,13 @@
     <div id="graph">
       <la-cartesian
         :autoresize="true"
-        :bound="[(n) => n - 2, (n) => n + 2]"
+        :bound="[(n) => (n - 1).toFixed(0), (n) => (n + 1).toFixed(0)]"
         textColor="#707070"
         :data="[
-          { name: date5, pv: date5close },
-          { name: date4, pv: date4close },
-          { name: date3, pv: date3close },
-          { name: date2, pv: date2close },
-          { name: date1, pv: date1close },
+          { name: 'open', pv: open },
+          { name: 'low', pv: low },
+          { name: 'high', pv: high },
+          { name: 'close', pv: close },
         ]"
       >
         <la-line dot curve prop="pv"></la-line>
@@ -62,15 +61,7 @@ export default {
     "low",
     "volume",
     "date1",
-    "date2",
-    "date3",
-    "date4",
-    "date5",
     "date1close",
-    "date2close",
-    "date3close",
-    "date4close",
-    "date5close",
   ],
   components: {
     LaCartesian: Cartesian,
@@ -134,7 +125,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 25px;
-  border: 1px solid #707070
+  border: 1px solid #707070;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -162,11 +153,9 @@ export default {
   }
 
   #graph {
-    
   }
 }
 
 @media only screen and (max-width: 400px) {
-
 }
 </style>
